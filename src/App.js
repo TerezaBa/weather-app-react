@@ -3,19 +3,10 @@ import SearchEngine from "./SearchEngine";
 import "./App.css";
 
 function App() {
-  let weatherData = {
-    cityName: "Prague",
-    date: "Sat 17:35",
-    description: "Mostly cloudy",
-    humidity: 76,
-    windSpeed: 26,
-    currentTemperature: 4,
-  };
-
   return (
     <div className="Weather container">
       <div className="app-container">
-        <SearchEngine date="Sat 17:35" />
+        <SearchEngine />
       </div>
       <small>
         <a
