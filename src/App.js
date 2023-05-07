@@ -39,7 +39,17 @@ function App() {
           </div>
         </div>
       </div>
-      <p>Open-source code, by TerezaBa</p>
+      <small>
+        <a
+          href="https://github.com/TerezaBa/weather-app-react"
+          target="_blank"
+          rel="noreferrer"
+        >
+          {" "}
+          Open-source code
+        </a>
+        , by TerezaBa
+      </small>
     </div>
   );
 }

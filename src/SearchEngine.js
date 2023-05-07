@@ -2,7 +2,7 @@ import React from "react";
 import "./SearchEngine.css";
 
 export default function SearchEngine() {
-  return (
+  let form = (
     <div className="SearchEngine">
       <form>
         <div className="row">
@@ -21,4 +21,6 @@ export default function SearchEngine() {
       </form>
     </div>
   );
+
+  return form;
 }
