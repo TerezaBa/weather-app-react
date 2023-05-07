@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./SearchEngine.css";
 
-export default function SearchEngine() {
+export default function SearchEngine(props) {
   const [query, setQuery] = useState("");
 
   function displayTemp(response) {
@@ -45,6 +45,28 @@ export default function SearchEngine() {
   return (
     <div className="Weather">
       {form}
+      <div className="row">
+        <div className="col-4">
+          <h1>City</h1>
+          <h3>{props.date}</h3>
+          <h4>Description</h4>
+          <ul>
+            <li>Humidity: </li>
+            <li>Wind: km/h</li>
+          </ul>
+        </div>
+        <div className="col-8 align-self-center">
+          <span>
+            <h2>
+              <span role="img" aria-label="cloudy">
+                ⛅
+              </span>{" "}
+              TEMP°C
+            </h2>
+          </span>
+          <span className="units">°C</span>
+        </div>
+      </div>
       <p>{query}</p>
     </div>
   );
