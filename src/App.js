@@ -1,4 +1,5 @@
 import React from "react";
+import SearchEngine from "./SearchEngine";
 import "./App.css";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
   return (
     <div className="Weather container">
       <div className="app-container">
+        <SearchEngine />
         <div className="row">
           <div className="col-4">
             <h1>{weatherData.cityName}</h1>
