@@ -5,12 +5,11 @@ import "./SearchEngine.css";
 
 export default function SearchEngine(props) {
   const [query, setQuery] = useState("");
-  const [searched, setSearched] = useState(false);
-  const [weather, setWeather] = useState({});
+  const [weatherData, setWeatherData] = useState({ searched: false });
 
   function displayTemp(response) {
-    setSearched(true);
-    setWeather({
+    setWeatherData({
+      searched: true,
       city: response.data.city,
       temp: Math.round(response.data.temperature.current),
       hum: response.data.temperature.humidity,
@@ -53,18 +52,18 @@ export default function SearchEngine(props) {
     </div>
   );
 
-  if (searched) {
+  if (weatherData.searched) {
     return (
       <div className="Weather">
         {form}
         <Current
-          temp={weather.temp}
-          city={weather.city}
-          hum={weather.hum}
-          wind={weather.wind}
-          desc={weather.desc}
+          temp={weatherData.temp}
+          city={weatherData.city}
+          hum={weatherData.hum}
+          wind={weatherData.wind}
+          desc={weatherData.desc}
           date="Sat 17:35"
-          icon={weather.icon}
+          icon={weatherData.icon}
         />
       </div>
     );
