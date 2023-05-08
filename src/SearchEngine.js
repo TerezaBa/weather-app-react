@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-import Current from "./Current";
 import "./SearchEngine.css";
 
 export default function SearchEngine(props) {
@@ -8,6 +7,7 @@ export default function SearchEngine(props) {
   const [weatherData, setWeatherData] = useState({ searched: false });
 
   function displayTemp(response) {
+    console.log(response.data);
     setWeatherData({
       searched: true,
       city: response.data.city,
@@ -56,15 +56,26 @@ export default function SearchEngine(props) {
     return (
       <div className="Weather">
         {form}
-        <Current
-          temp={weatherData.temp}
-          city={weatherData.city}
-          hum={weatherData.hum}
-          wind={weatherData.wind}
-          desc={weatherData.desc}
-          date="Sat 17:35"
-          icon={weatherData.icon}
-        />
+        <div className="row">
+          <div className="col-4">
+            <h1>{weatherData.city}</h1>
+            <h3>Sat 17:35</h3>
+            <h4>{weatherData.desc}</h4>
+            <ul>
+              <li>Humidity: {weatherData.hum}%</li>
+              <li>Wind: {weatherData.wind} m/s</li>
+            </ul>
+          </div>
+          <div className="col-8 align-self-center">
+            <span>
+              <h2>
+                <img src={weatherData.icon} alt={weatherData.desc} />{" "}
+                {weatherData.temp}
+              </h2>
+            </span>
+            <span className="units">°C</span>
+          </div>
+        </div>
       </div>
     );
   } else {
