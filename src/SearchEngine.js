@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import FormateDate from "./FormateDate";
 import "./SearchEngine.css";
 
 export default function SearchEngine(props) {
@@ -7,8 +8,8 @@ export default function SearchEngine(props) {
   const [weatherData, setWeatherData] = useState({ searched: false });
 
   function displayTemp(response) {
-    console.log(response.data);
     setWeatherData({
+      date: new Date(response.data.time * 1000),
       searched: true,
       city: response.data.city,
       temp: Math.round(response.data.temperature.current),
@@ -22,7 +23,7 @@ export default function SearchEngine(props) {
   function handleSubmit(event) {
     event.preventDefault();
 
-    let apiKey = "b36tedd42903o5c6c68a4a10b4b1953f";
+    const apiKey = "b36tedd42903o5c6c68a4a10b4b1953f";
     let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${query}&key=${apiKey}`;
     axios.get(apiUrl).then(displayTemp);
   }
@@ -59,7 +60,9 @@ export default function SearchEngine(props) {
         <div className="row">
           <div className="col-4">
             <h1>{weatherData.city}</h1>
-            <h3>Sat 17:35</h3>
+            <h3>
+              <FormateDate date={weatherData.date} />
+            </h3>
             <h4>{weatherData.desc}</h4>
             <ul>
               <li>Humidity: {weatherData.hum}%</li>
