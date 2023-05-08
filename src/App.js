@@ -2,7 +2,7 @@ import React from "react";
 import SearchEngine from "./SearchEngine";
 import "./App.css";
 
-function App() {
+export default function App() {
   return (
     <div className="Weather container">
       <div className="app-container">
@@ -22,5 +22,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
