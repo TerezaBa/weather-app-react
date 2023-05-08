@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import FormateDate from "./FormateDate";
-import "./SearchEngine.css";
+import "./Weather.css";
 
 export default function SearchEngine(props) {
   const [query, setQuery] = useState("");
@@ -33,7 +33,7 @@ export default function SearchEngine(props) {
   }
 
   let form = (
-    <div className="SearchEngine">
+    <div className="Weather">
       <form onSubmit={handleSubmit}>
         <div className="row">
           <div className="col-9">
