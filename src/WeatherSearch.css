@@ -10,17 +10,9 @@
   text-align: center;
 }
 
-.WeatherSearch h3,
-h4 {
+.WeatherSearch h4 {
   font-weight: 400;
   margin: 0;
-}
-
-.WeatherSearch h3 {
-  font-size: 20px;
-}
-
-.WeatherSearch h4 {
   font-size: 18px;
 }
 

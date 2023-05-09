@@ -6,10 +6,10 @@ export default function CurrentWeather(props) {
     <div className="row">
       <div className="col-4">
         <h1>{props.info.city}</h1>
-        <h3>
+        <h4>
           <FormateDate date={props.info.date} />
-        </h3>
-        <h4>{props.info.desc}</h4>
+        </h4>
+        <h4 className="text-capitalize">{props.info.desc}</h4>
         <ul>
           <li>Humidity: {props.info.hum}%</li>
           <li>Wind: {props.info.wind} m/s</li>
