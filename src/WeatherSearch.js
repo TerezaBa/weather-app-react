@@ -2,21 +2,21 @@ import React, { useState } from "react";
 import axios from "axios";
 import CurrentWeather from "./CurrentWeather";
 
-import "./Weather.css";
+import "./WeatherSearch.css";
 
-export default function Weather(props) {
+export default function WeatherSearch(props) {
   const [query, setQuery] = useState(props.defaultCity);
   const [weatherData, setWeatherData] = useState({ searched: false });
 
   function displayTemp(response) {
     setWeatherData({
-      date: new Date(response.data.time * 1000),
       searched: true,
+      date: new Date(response.data.time * 1000),
       city: response.data.city,
+      desc: response.data.condition.description,
       temp: Math.round(response.data.temperature.current),
       hum: response.data.temperature.humidity,
       wind: response.data.wind.speed,
-      desc: response.data.condition.description,
       icon: response.data.condition.icon_url,
     });
   }
@@ -37,7 +37,7 @@ export default function Weather(props) {
   }
 
   let form = (
-    <div className="Weather">
+    <div className="WeatherSearch">
       <form onSubmit={handleSubmit}>
         <div className="row">
           <div className="col-9">
@@ -59,7 +59,7 @@ export default function Weather(props) {
 
   if (weatherData.searched) {
     return (
-      <div className="Weather">
+      <div className="WeatherSearch">
         <div>{form}</div>
         <CurrentWeather info={weatherData} />
       </div>
