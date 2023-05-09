@@ -14,7 +14,7 @@ export default function WeatherSearch(props) {
       date: new Date(response.data.time * 1000),
       city: response.data.city,
       desc: response.data.condition.description,
-      temp: Math.round(response.data.temperature.current),
+      temp: response.data.temperature.current,
       hum: response.data.temperature.humidity,
       wind: response.data.wind.speed,
       icon: response.data.condition.icon_url,
@@ -29,7 +29,7 @@ export default function WeatherSearch(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    search(query);
+    search();
   }
 
   function handleQuery(event) {

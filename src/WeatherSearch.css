@@ -4,8 +4,8 @@
   margin: 20px 0 10px 0;
 }
 
-.WeatherSearch h2 {
-  font-size: 80px;
+.WeatherSearch .temp {
+  font-size: 70px;
   font-weight: 600;
   text-align: center;
 }
@@ -34,8 +34,8 @@
 
 .WeatherSearch .units {
   position: relative;
-  right: -309px;
-  top: -100px;
+  right: -14px;
+  top: -38px;
 }
 
 .WeatherSearch .btn {

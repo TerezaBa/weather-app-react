@@ -1,10 +1,11 @@
 import React from "react";
 import FormateDate from "./FormateDate";
+import Temperature from "./Temperature";
 
 export default function CurrentWeather(props) {
   return (
     <div className="row">
-      <div className="col-4">
+      <div className="col-6">
         <h1>{props.info.city}</h1>
         <h4>
           <FormateDate date={props.info.date} />
@@ -15,14 +16,9 @@ export default function CurrentWeather(props) {
           <li>Wind: {props.info.wind} m/s</li>
         </ul>
       </div>
-      <div className="col-8 align-self-center">
-        <span>
-          <h2>
-            <img src={props.info.icon} alt={props.info.desc} />{" "}
-            {props.info.temp}
-          </h2>
-        </span>
-        <span className="units">°C</span>
+      <div className="col-6 align-self-center">
+        <img src={props.info.icon} alt={props.info.desc} />
+        <Temperature metric={props.info.temp} />
       </div>
     </div>
   );
