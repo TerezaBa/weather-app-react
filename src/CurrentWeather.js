@@ -14,8 +14,12 @@ export default function CurrentWeather(props) {
         </h4>
         <h4 className="text-capitalize">{props.info.desc}</h4>
         <ul>
-          <li>Humidity: {props.info.hum}%</li>
-          <li>Wind: {props.info.wind} m/s</li>
+          <li>
+            <span className="info-text">Humidity:</span> {props.info.hum}%
+          </li>
+          <li>
+            <span className="info-text">Wind:</span> {props.info.wind} m/s
+          </li>
         </ul>
       </div>
       <div className="col-6 align-self-center">

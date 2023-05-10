@@ -14,8 +14,11 @@
   font-size: 12px;
   font-weight: 500;
   list-style: none;
-  opacity: 0.7;
   padding: 10px 0;
+}
+
+.WeatherSearch .info-text {
+  opacity: 0.7;
 }
 
 .WeatherSearch .btn {
