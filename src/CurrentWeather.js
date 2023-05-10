@@ -2,10 +2,11 @@ import React from "react";
 import FormateDate from "./FormateDate";
 import Temperature from "./Temperature";
 import WeatherIcon from "./WeatherIcon";
+import "./CurrentWeather.css";
 
 export default function CurrentWeather(props) {
   return (
-    <div className="row">
+    <div className="row CurrentWeather">
       <div className="col-6">
         <h1>{props.info.city}</h1>
         <h4>
@@ -18,7 +19,11 @@ export default function CurrentWeather(props) {
         </ul>
       </div>
       <div className="col-6 align-self-center">
-        <WeatherIcon iconInfo={props.info.icon} alt={props.info.desc} />
+        <WeatherIcon
+          iconInfo={props.info.icon}
+          alt={props.info.desc}
+          size={58}
+        />
         <Temperature metric={props.info.temp} />
       </div>
     </div>

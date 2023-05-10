@@ -1,0 +1,17 @@
+.Forecast .card {
+  border-color: #fff;
+}
+.Forecast .card-body {
+  padding: 16px 10px;
+  text-align: center;
+}
+
+.Forecast .card-title,
+.forecast-temp-min,
+.forecast-temp-max {
+  font-size: 15px;
+}
+
+.Forecast .forecast-temp-min {
+  opacity: 0.5;
+}
