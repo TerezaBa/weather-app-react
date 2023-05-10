@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 
 export default function Temperature(props) {
-  const [temp, setTemp] = useState("metric");
+  const [unit, setUnit] = useState("metric");
 
   function showCels(event) {
     event.preventDefault();
-    setTemp(props.metric);
+    setUnit("metric");
   }
 
   function showFahr(event) {
     event.preventDefault();
-    setTemp(props.metric * 1.8 + 32);
+    setUnit("imperial");
   }
 
-  if ("metric") {
+  if (unit === "metric") {
     return (
       <div>
         <span className="temp">{Math.round(props.metric)}</span>
