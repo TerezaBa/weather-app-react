@@ -12,6 +12,18 @@
   font-size: 15px;
 }
 
+.Forecast .card-title {
+  margin-bottom: 20px;
+}
+
+.Forecast .forecast-temps {
+  margin-top: 10px;
+}
+
 .Forecast .forecast-temp-min {
   opacity: 0.5;
+}
+
+.Forecast .forecast-temp-max {
+  margin-right: 5px;
 }
