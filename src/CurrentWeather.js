@@ -1,6 +1,7 @@
 import React from "react";
 import FormateDate from "./FormateDate";
 import Temperature from "./Temperature";
+import WeatherIcon from "./WeatherIcon";
 
 export default function CurrentWeather(props) {
   return (
@@ -17,7 +18,7 @@ export default function CurrentWeather(props) {
         </ul>
       </div>
       <div className="col-6 align-self-center">
-        <img src={props.info.icon} alt={props.info.desc} />
+        <WeatherIcon iconInfo={props.info.icon} alt={props.info.desc} />
         <Temperature metric={props.info.temp} />
       </div>
     </div>
