@@ -10,6 +10,7 @@ export default function WeatherSearch(props) {
   const [weatherData, setWeatherData] = useState({ searched: false });
 
   function displayTemp(response) {
+    console.log(response.data);
     setWeatherData({
       searched: true,
       date: new Date(response.data.time * 1000),
@@ -64,11 +65,7 @@ export default function WeatherSearch(props) {
       <div className="WeatherSearch">
         <div>{form}</div>
         <CurrentWeather info={weatherData} />
-        <Forecast
-          iconInfo={weatherData.icon}
-          alt={weatherData.desc}
-          coords={weatherData.coords}
-        />
+        <Forecast coords={weatherData.coords} />
       </div>
     );
   } else {
