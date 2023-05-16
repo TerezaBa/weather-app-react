@@ -5,14 +5,6 @@
   margin-left: 60px;
 }
 
-.CurrentWeather a {
-  text-decoration: none;
-}
-
-.CurrentWeather a:hover {
-  text-decoration: underline;
-}
-
 .CurrentWeather .units {
   position: relative;
   font-size: 18px;
