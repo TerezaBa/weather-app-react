@@ -31,6 +31,7 @@ export default function OneDayForecast(props) {
           />
           <div className="forecast-temps">
             <span className="forecast-temp-max">{roundMax()}</span>
+            {"   "}
             <span className="forecast-temp-min">{roundMin()}</span>
           </div>
         </div>

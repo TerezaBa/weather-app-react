@@ -20,10 +20,46 @@
   margin-top: 10px;
 }
 
-.Forecast .forecast-temp-min {
+.Forecast .forecast-temp-min,
+.card-title {
   opacity: 0.5;
 }
 
 .Forecast .forecast-temp-max {
-  margin-right: 5px;
+  font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  .Forecast .card-body {
+    padding: 0;
+    text-align: center;
+  }
+
+  .Forecast .card-title,
+  .forecast-temp-min,
+  .forecast-temp-max {
+    font-size: 8px;
+  }
+
+  .Forecast canvas {
+    width: 12px;
+    height: 12px;
+  }
+
+  .Forecast .card-title {
+    margin-bottom: 5px;
+  }
+
+  .Forecast .forecast-temps {
+    margin-top: 0;
+  }
+
+  .Forecast .forecast-temp-min,
+  .card-title {
+    opacity: 0.5;
+  }
+
+  .Forecast .forecast-temp-max {
+    font-weight: 500;
+  }
 }

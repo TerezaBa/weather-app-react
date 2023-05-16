@@ -2,6 +2,7 @@ import React from "react";
 import FormateDate from "./FormateDate";
 import Temperature from "./Temperature";
 import WeatherIcon from "./WeatherIcon";
+
 import "./CurrentWeather.css";
 
 export default function CurrentWeather(props) {

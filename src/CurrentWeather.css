@@ -25,3 +25,27 @@
   right: -38px;
   top: 5px;
 }
+
+@media (max-width: 900px) {
+  .CurrentWeather .temp {
+    font-size: 32px;
+    font-weight: 600;
+    text-align: center;
+    margin-left: 34px;
+  }
+
+  .CurrentWeather .units {
+    position: relative;
+    font-size: 11px;
+    right: -4px;
+    top: -16px;
+  }
+
+  .CurrentWeather canvas {
+    position: relative;
+    right: 7px;
+    top: 48px;
+    width: 32px;
+    height: 32px;
+  }
+}

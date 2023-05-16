@@ -10,7 +10,6 @@ export default function DataSearch(props) {
   const [weatherData, setWeatherData] = useState({ searched: false });
 
   function displayTemp(response) {
-    console.log(response.data);
     setWeatherData({
       searched: true,
       date: new Date(response.data.time * 1000),
