@@ -22,4 +22,8 @@
   .container {
     max-width: 300px;
   }
+
+  footer {
+    font-size: 12px;
+  }
 }

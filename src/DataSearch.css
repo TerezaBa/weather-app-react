@@ -47,4 +47,8 @@
   .col-9 {
     padding: 0;
   }
+
+  .DataSearch input {
+    line-height: 1.2;
+  }
 }
