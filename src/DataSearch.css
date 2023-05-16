@@ -1,26 +1,26 @@
-.WeatherSearch h1 {
+.DataSearch h1 {
   font-size: 40px;
   font-weight: 700;
   margin: 20px 0 10px 0;
 }
 
-.WeatherSearch h4 {
+.DataSearch h4 {
   font-weight: 400;
   margin: 0;
   font-size: 18px;
 }
 
-.WeatherSearch ul {
+.DataSearch ul {
   font-size: 12px;
   font-weight: 500;
   list-style: none;
   padding: 10px 0;
 }
 
-.WeatherSearch .info-text {
+.DataSearch .info-text {
   opacity: 0.7;
 }
 
-.WeatherSearch .btn {
+.DataSearch .btn {
   padding: 0.375rem 2.75rem;
 }

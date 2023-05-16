@@ -1,12 +1,12 @@
 import React from "react";
-import WeatherSearch from "./WeatherSearch";
+import DataSearch from "./DataSearch";
 import "./App.css";
 
 export default function App() {
   return (
     <div className="container">
       <div className="App">
-        <WeatherSearch defaultCity="Prague" />
+        <DataSearch defaultCity="Prague" />
       </div>
       <footer>
         <small>

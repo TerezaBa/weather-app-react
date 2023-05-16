@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import "./Temperature.css";
+
 export default function Temperature(props) {
   const [unit, setUnit] = useState("metric");
 
@@ -15,7 +17,7 @@ export default function Temperature(props) {
 
   if (unit === "metric") {
     return (
-      <span>
+      <span className="Temperature">
         <span className="temp">{Math.round(props.metric)}</span>
         <span className="units">
           °C |{" "}
@@ -27,7 +29,7 @@ export default function Temperature(props) {
     );
   } else {
     return (
-      <span>
+      <span className="Temperature">
         <span className="temp">{Math.round(props.metric * 1.8 + 32)}</span>
         <span className="units">
           <a href="/" onClick={showCels}>

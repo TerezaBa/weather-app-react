@@ -3,9 +3,9 @@ import axios from "axios";
 import CurrentWeather from "./CurrentWeather";
 import Forecast from "./Forecast";
 
-import "./WeatherSearch.css";
+import "./DataSearch.css";
 
-export default function WeatherSearch(props) {
+export default function DataSearch(props) {
   const [query, setQuery] = useState(props.defaultCity);
   const [weatherData, setWeatherData] = useState({ searched: false });
 
@@ -40,7 +40,7 @@ export default function WeatherSearch(props) {
   }
 
   let form = (
-    <div className="WeatherSearch">
+    <div className="DataSearch">
       <form onSubmit={handleSubmit}>
         <div className="row">
           <div className="col-9">
@@ -62,7 +62,7 @@ export default function WeatherSearch(props) {
 
   if (weatherData.searched) {
     return (
-      <div className="WeatherSearch">
+      <div className="DataSearch">
         <div>{form}</div>
         <CurrentWeather info={weatherData} />
         <Forecast coords={weatherData.coords} />
