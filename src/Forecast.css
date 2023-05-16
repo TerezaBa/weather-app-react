@@ -35,10 +35,13 @@
     text-align: center;
   }
 
-  .Forecast .card-title,
-  .forecast-temp-min,
+  .Forecast .forecast-temp-min,
   .forecast-temp-max {
     font-size: 8px;
+  }
+
+  .Forecast .card-title {
+    font-size: 6px;
   }
 
   .Forecast .forecast-temp-min,
