@@ -6,7 +6,7 @@ import "./Forecast.css";
 export default function Forecast(props) {
   console.log(props.coords);
   const [searched, setSearched] = useState(false);
-  const [forecastData, setForecastData] = useState(null);
+  const [forecastData, setForecastData] = useState([]);
 
   function handleResponse(response) {
     setForecastData(response.data.daily);
@@ -15,13 +15,19 @@ export default function Forecast(props) {
 
   if (searched) {
     return (
-      <div>
-        "Halo";
-        <OneDayForecast data={forecastData[0]} />
+      <div className="row Forecast">
+        {forecastData.map(function (dailyForecast, index) {
+          if (index < 6) {
+            return (
+              <div key={index} className="col-2">
+                <OneDayForecast data={dailyForecast} />
+              </div>
+            );
+          }
+        })}
       </div>
     );
   } else {
-    console.log("halo");
     let lon = props.coords.longitude;
     let lat = props.coords.latitude;
     let apiKey = "b36tedd42903o5c6c68a4a10b4b1953f";
