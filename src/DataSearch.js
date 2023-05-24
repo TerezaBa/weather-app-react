@@ -25,7 +25,8 @@ export default function DataSearch(props) {
 
   function search() {
     const apiKey = "b36tedd42903o5c6c68a4a10b4b1953f";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${query}&key=${apiKey}`;
+    const units = "metric";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${query}&key=${apiKey}&units=${units}`;
     axios.get(apiUrl).then(displayTemp);
   }
 

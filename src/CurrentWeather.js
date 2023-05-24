@@ -6,11 +6,6 @@ import WeatherIcon from "./WeatherIcon";
 import "./CurrentWeather.css";
 
 export default function CurrentWeather(props) {
-  function showFahr(event) {
-    event.preventDefault();
-    alert("This might work.");
-  }
-
   return (
     <div className="row CurrentWeather">
       <div className="col-6">
@@ -34,7 +29,11 @@ export default function CurrentWeather(props) {
           alt={props.info.desc}
           size={58}
         />
-        <Temperature metric={props.info.temp} onFahrClick={showFahr} />
+        <Temperature
+          metric={props.info.temp}
+          // onFahrClick={showFahr}
+          // onCelsClick={showCels}
+        />
       </div>
     </div>
   );

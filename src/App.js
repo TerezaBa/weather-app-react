@@ -1,12 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import DataSearch from "./DataSearch";
+import { UnitSwitchContext } from "./UnitSwitchContext";
 import "./App.css";
 
 export default function App() {
+  const [value, setValue] = useState("metric");
+
   return (
     <div className="container">
       <div className="App">
-        <DataSearch defaultCity="Prague" />
+        <UnitSwitchContext.Provider value={{ value, setValue }}>
+          <DataSearch defaultCity="Prague" />
+        </UnitSwitchContext.Provider>
       </div>
       <footer>
         <small>

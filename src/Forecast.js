@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import OneDayForecast from "./OneDayForecast";
+import { UnitSwitchContext } from "./UnitSwitchContext";
 
 import "./Forecast.css";
 
 export default function Forecast(props) {
   const [searched, setSearched] = useState(false);
   const [forecastData, setForecastData] = useState(null);
+  const { value, setValue } = useContext(UnitSwitchContext);
 
   useEffect(() => {
     setSearched(false);
@@ -15,6 +17,7 @@ export default function Forecast(props) {
   function handleResponse(response) {
     setForecastData(response.data.daily);
     setSearched(true);
+    setValue("fahr");
   }
 
   function search() {
@@ -29,14 +32,26 @@ export default function Forecast(props) {
     return (
       <div className="row Forecast">
         {forecastData.map(function (dailyForecast, index) {
-          if (index < 6) {
+          if (index < 6 && value === "metric") {
             return (
               <div key={index} className="col-2">
-                <OneDayForecast data={dailyForecast} />
+                <OneDayForecast
+                  time={dailyForecast.time}
+                  max={Math.round(dailyForecast.temperature.maximum)}
+                  min={Math.round(dailyForecast.temperature.minimum)}
+                />
               </div>
             );
           } else {
-            return null;
+            return (
+              <div key={index} className="col-2">
+                <OneDayForecast
+                  time={dailyForecast.time}
+                  max={Math.round(dailyForecast.temperature.maximum)}
+                  min={Math.round(dailyForecast.temperature.minimum)}
+                />
+              </div>
+            );
           }
         })}
       </div>
