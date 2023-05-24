@@ -3,19 +3,19 @@ import WeatherIcon from "./WeatherIcon";
 
 export default function OneDayForecast(props) {
   function forecastDay() {
-    let time = new Date(props.time * 1000);
+    let time = new Date(props.data.time * 1000);
     let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     let day = days[time.getDay()];
     return day;
   }
 
   function roundMax() {
-    let maxTemp = Math.round(props.max);
+    let maxTemp = Math.round(props.data.temperature.maximum);
     return `${maxTemp}°`;
   }
 
   function roundMin() {
-    let minTemp = Math.round(props.min);
+    let minTemp = Math.round(props.data.temperature.minimum);
     return `${minTemp}°`;
   }
 

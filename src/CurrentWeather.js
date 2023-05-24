@@ -29,11 +29,7 @@ export default function CurrentWeather(props) {
           alt={props.info.desc}
           size={58}
         />
-        <Temperature
-          metric={props.info.temp}
-          // onFahrClick={showFahr}
-          // onCelsClick={showCels}
-        />
+        <Temperature metric={props.info.temp} />
       </div>
     </div>
   );
