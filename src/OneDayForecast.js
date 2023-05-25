@@ -1,5 +1,7 @@
 import React from "react";
 import WeatherIcon from "./WeatherIcon";
+import Metric from "./Metric";
+import Imperial from "./Imperial";
 
 export default function OneDayForecast(props) {
   function forecastDay() {
@@ -7,26 +9,6 @@ export default function OneDayForecast(props) {
     let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     let day = days[time.getDay()];
     return day;
-  }
-
-  function roundMaxFahr() {
-    let maxTempFahr = Math.round(props.data.temperature.maximum * 1.8 + 32);
-    return `${maxTempFahr}°`;
-  }
-
-  function roundMinFahr() {
-    let minTempFahr = Math.round(props.data.temperature.minimum * 1.8 + 32);
-    return `${minTempFahr}°`;
-  }
-
-  function roundMax() {
-    let maxTemp = Math.round(props.data.temperature.maximum);
-    return `${maxTemp}°`;
-  }
-
-  function roundMin() {
-    let minTemp = Math.round(props.data.temperature.minimum);
-    return `${minTemp}°`;
   }
 
   if (props.unit === "metric") {
@@ -41,9 +23,13 @@ export default function OneDayForecast(props) {
               size={42}
             />
             <div className="forecast-temps">
-              <span className="forecast-temp-max">{roundMax()}</span>
+              <span className="forecast-temp-max">
+                <Metric temp={props.data.temperature.maximum} />°
+              </span>
               {"   "}
-              <span className="forecast-temp-min">{roundMin()}</span>
+              <span className="forecast-temp-min">
+                <Metric temp={props.data.temperature.minimum} />°
+              </span>
             </div>
           </div>
         </div>
@@ -61,9 +47,13 @@ export default function OneDayForecast(props) {
               size={42}
             />
             <div className="forecast-temps">
-              <span className="forecast-temp-max">{roundMaxFahr()}</span>
+              <span className="forecast-temp-max">
+                <Imperial temp={props.data.temperature.maximum} />°
+              </span>
               {"   "}
-              <span className="forecast-temp-min">{roundMinFahr()}</span>
+              <span className="forecast-temp-min">
+                <Imperial temp={props.data.temperature.minimum} />°
+              </span>
             </div>
           </div>
         </div>

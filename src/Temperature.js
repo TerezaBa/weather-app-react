@@ -1,20 +1,12 @@
 import React, { useContext } from "react";
+import { UnitSwitchContext } from "./UnitSwitchContext";
+import Metric from "./Metric";
+import Imperial from "./Imperial";
 
 import "./Temperature.css";
-import { UnitSwitchContext } from "./UnitSwitchContext";
 
 export default function Temperature(props) {
   const { value, setValue } = useContext(UnitSwitchContext);
-
-  function tempCels() {
-    let tempCels = Math.round(props.metric);
-    return tempCels;
-  }
-
-  function tempFahr() {
-    let tempFahr = Math.round(props.metric * 1.8 + 32);
-    return tempFahr;
-  }
 
   function showCels(event) {
     event.preventDefault();
@@ -29,7 +21,9 @@ export default function Temperature(props) {
   if (value === `metric`) {
     return (
       <span className="Temperature">
-        <span className="temp">{tempCels()}</span>
+        <span className="temp">
+          <Metric temp={props.metric} />
+        </span>
         <span className="units">
           °C |{" "}
           <a href="/" onClick={showFahr}>
@@ -41,7 +35,9 @@ export default function Temperature(props) {
   } else {
     return (
       <span className="Temperature">
-        <span className="temp">{tempFahr()}</span>
+        <span className="temp">
+          <Imperial temp={props.metric} />
+        </span>
         <span className="units">
           <a href="/" onClick={showCels}>
             °C

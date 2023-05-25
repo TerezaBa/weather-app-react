@@ -15,10 +15,10 @@
 
 @media (max-width: 768px) {
   .App {
-    max-width: 300px;
     padding: 20px;
   }
 
+  .App,
   .container {
     max-width: 300px;
   }
