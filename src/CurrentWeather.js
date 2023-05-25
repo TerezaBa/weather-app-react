@@ -1,5 +1,5 @@
 import React from "react";
-import FormateDate from "./FormateDate";
+import FormatCurrentDate from "./FormatCurrentDate";
 import Temperature from "./Temperature";
 import WeatherIcon from "./WeatherIcon";
 
@@ -11,7 +11,7 @@ export default function CurrentWeather(props) {
       <div className="col-6">
         <h1>{props.info.city}</h1>
         <h4>
-          <FormateDate date={props.info.date} />
+          <FormatCurrentDate date={props.info.date} />
         </h4>
         <h4 className="text-capitalize">{props.info.desc}</h4>
         <ul>

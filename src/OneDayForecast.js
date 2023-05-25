@@ -2,21 +2,17 @@ import React from "react";
 import WeatherIcon from "./WeatherIcon";
 import Metric from "./Metric";
 import Imperial from "./Imperial";
+import FormatForecastDate from "./FormatForecastDate";
 
 export default function OneDayForecast(props) {
-  function forecastDay() {
-    let time = new Date(props.data.time * 1000);
-    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-    let day = days[time.getDay()];
-    return day;
-  }
-
   if (props.unit === "metric") {
     return (
       <div>
         <div className="card">
           <div className="card-body">
-            <h5 className="card-title">{forecastDay()}</h5>
+            <h5 className="card-title">
+              <FormatForecastDate time={props.data.time} />
+            </h5>
             <WeatherIcon
               iconInfo={props.data.condition.icon}
               alt={props.data.condition.description}
@@ -40,7 +36,9 @@ export default function OneDayForecast(props) {
       <div>
         <div className="card">
           <div className="card-body">
-            <h5 className="card-title">{forecastDay()}</h5>
+            <h5 className="card-title">
+              <FormatForecastDate time={props.data.time} />
+            </h5>
             <WeatherIcon
               iconInfo={props.data.condition.icon}
               alt={props.data.condition.description}

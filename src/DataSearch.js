@@ -12,7 +12,7 @@ export default function DataSearch(props) {
   function displayTemp(response) {
     setWeatherData({
       searched: true,
-      date: new Date(response.data.time * 1000),
+      date: response.data.time,
       coords: response.data.coordinates,
       city: response.data.city,
       desc: response.data.condition.description,
