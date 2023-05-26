@@ -6,19 +6,19 @@ import Imperial from "./Imperial";
 import "./styles/Temperature.css";
 
 export default function Temperature(props) {
-  const { value, setValue } = useContext(UnitSwitchContext);
+  const { unit, setUnit } = useContext(UnitSwitchContext);
 
   function showCels(event) {
     event.preventDefault();
-    setValue(`metric`);
+    setUnit(`metric`);
   }
 
   function showFahr(event) {
     event.preventDefault();
-    setValue();
+    setUnit();
   }
 
-  if (value === `metric`) {
+  if (unit === `metric`) {
     return (
       <span className="Temperature">
         <span className="temp">

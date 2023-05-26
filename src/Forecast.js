@@ -8,7 +8,7 @@ import "./styles/Forecast.css";
 export default function Forecast(props) {
   const [searched, setSearched] = useState(false);
   const [forecastData, setForecastData] = useState(null);
-  const { value } = useContext(UnitSwitchContext);
+  const { unit } = useContext(UnitSwitchContext);
 
   useEffect(() => {
     setSearched(false);
@@ -34,7 +34,7 @@ export default function Forecast(props) {
           if (index < 6) {
             return (
               <div key={index} className="col-2">
-                <OneDayForecast data={dailyForecast} unit={value} />
+                <OneDayForecast data={dailyForecast} unit={unit} />
               </div>
             );
           } else {

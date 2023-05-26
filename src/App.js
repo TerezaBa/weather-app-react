@@ -5,12 +5,12 @@ import { UnitSwitchContext } from "./UnitSwitchContext";
 import "./styles/App.css";
 
 export default function App() {
-  const [value, setValue] = useState("metric");
+  const [unit, setUnit] = useState("metric");
 
   return (
     <div className="container">
       <div className="App">
-        <UnitSwitchContext.Provider value={{ value, setValue }}>
+        <UnitSwitchContext.Provider value={{ unit, setUnit }}>
           <DataSearch defaultCity="Prague" />
         </UnitSwitchContext.Provider>
       </div>
