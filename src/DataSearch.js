@@ -64,7 +64,7 @@ export default function DataSearch(props) {
     return (
       <div className="DataSearch">
         <div>{form}</div>
-        <CurrentWeather info={weatherData} />
+        <CurrentWeather weatherInfo={weatherData} />
         <Forecast coords={weatherData.coords} />
       </div>
     );

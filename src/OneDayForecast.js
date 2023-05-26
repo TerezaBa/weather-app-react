@@ -11,20 +11,20 @@ export default function OneDayForecast(props) {
         <div className="card">
           <div className="card-body">
             <h5 className="card-title">
-              <FormatForecastDate time={props.data.time} />
+              <FormatForecastDate time={props.forecastData.time} />
             </h5>
             <WeatherIcon
-              iconInfo={props.data.condition.icon}
-              alt={props.data.condition.description}
+              iconInfo={props.forecastData.condition.icon}
+              alt={props.forecastData.condition.description}
               size={42}
             />
             <div className="forecast-temps">
               <span className="forecast-temp-max">
-                <Metric temp={props.data.temperature.maximum} />°
+                <Metric temp={props.forecastData.temperature.maximum} />°
               </span>
               {"   "}
               <span className="forecast-temp-min">
-                <Metric temp={props.data.temperature.minimum} />°
+                <Metric temp={props.forecastData.temperature.minimum} />°
               </span>
             </div>
           </div>
@@ -37,20 +37,20 @@ export default function OneDayForecast(props) {
         <div className="card">
           <div className="card-body">
             <h5 className="card-title">
-              <FormatForecastDate time={props.data.time} />
+              <FormatForecastDate time={props.forecastData.time} />
             </h5>
             <WeatherIcon
-              iconInfo={props.data.condition.icon}
-              alt={props.data.condition.description}
+              iconInfo={props.forecastData.condition.icon}
+              alt={props.forecastData.condition.description}
               size={42}
             />
             <div className="forecast-temps">
               <span className="forecast-temp-max">
-                <Imperial temp={props.data.temperature.maximum} />°
+                <Imperial temp={props.forecastData.temperature.maximum} />°
               </span>
               {"   "}
               <span className="forecast-temp-min">
-                <Imperial temp={props.data.temperature.minimum} />°
+                <Imperial temp={props.forecastData.temperature.minimum} />°
               </span>
             </div>
           </div>
