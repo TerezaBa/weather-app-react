@@ -3,7 +3,7 @@ import FormatCurrentDate from "./FormatCurrentDate";
 import Temperature from "./Temperature";
 import WeatherIcon from "./WeatherIcon";
 
-import "./CurrentWeather.css";
+import "./styles/CurrentWeather.css";
 
 export default function CurrentWeather(props) {
   return (

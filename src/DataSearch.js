@@ -3,7 +3,7 @@ import axios from "axios";
 import CurrentWeather from "./CurrentWeather";
 import Forecast from "./Forecast";
 
-import "./DataSearch.css";
+import "./styles/DataSearch.css";
 
 export default function DataSearch(props) {
   const [query, setQuery] = useState(props.defaultCity);

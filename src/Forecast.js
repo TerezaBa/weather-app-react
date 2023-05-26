@@ -3,7 +3,7 @@ import axios from "axios";
 import OneDayForecast from "./OneDayForecast";
 import { UnitSwitchContext } from "./UnitSwitchContext";
 
-import "./Forecast.css";
+import "./styles/Forecast.css";
 
 export default function Forecast(props) {
   const [searched, setSearched] = useState(false);

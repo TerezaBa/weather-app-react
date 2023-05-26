@@ -3,7 +3,7 @@ import { UnitSwitchContext } from "./UnitSwitchContext";
 import Metric from "./Metric";
 import Imperial from "./Imperial";
 
-import "./Temperature.css";
+import "./styles/Temperature.css";
 
 export default function Temperature(props) {
   const { value, setValue } = useContext(UnitSwitchContext);

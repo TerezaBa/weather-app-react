@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import DataSearch from "./DataSearch";
 import { UnitSwitchContext } from "./UnitSwitchContext";
-import "./App.css";
+
+import "./styles/App.css";
 
 export default function App() {
   const [value, setValue] = useState("metric");
