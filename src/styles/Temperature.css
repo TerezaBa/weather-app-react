@@ -1,6 +1,6 @@
 .Temperature a {
   color: black;
-  opacity: 0.5;
+  opacity: var(--opacity-primary);
   text-decoration: none;
 }
 

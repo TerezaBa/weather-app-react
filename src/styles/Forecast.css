@@ -22,7 +22,7 @@
 
 .Forecast .forecast-temp-min,
 .card-title {
-  opacity: 0.5;
+  opacity: var(--opacity-primary);
 }
 
 .Forecast .forecast-temp-max {
@@ -64,7 +64,7 @@
 
   .Forecast .forecast-temp-min,
   .card-title {
-    opacity: 0.5;
+    opacity: var(--opacity-primary);
   }
 
   .Forecast .forecast-temp-max {
